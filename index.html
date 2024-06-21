@@ -10,9 +10,14 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: #add8e6; /* Fundo azul claro */
+            height: 100vh;
+            overflow-y: auto;
+            background-image: url('bolha.png'); /* Caminho da imagem de fundo */
+            background-repeat: repeat; /* Repetir a imagem para criar efeito de "chovendo" */
+            /* Você pode ajustar o tamanho da imagem de fundo aqui */
+            background-size: 100px 100px; /* Ajuste o tamanho conforme necessário */
         }
         .fish-container {
             margin: 10px;
@@ -22,66 +27,94 @@
             background: none;
             cursor: pointer;
             padding: 0;
-            width: 600px;
-            height: 470px;
+            width: 100%; /* width is 100% of its container */
+            height: auto;
         }
         .fish-button img {
-            width: 600px;
-            height: 470px;
+            width: 100%; /* width is 100% of the button */
+            height: auto; /* auto height to maintain aspect ratio */
             object-fit: cover;
         }
+        .row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .column {
+            flex: 1;
+            max-width: 20%;
+        }
+        @media (max-width: 1200px) {
+            .column {
+                max-width: 50%; /* for smaller screens */
+            }
+        }
     </style>
+    <script>
+        function showNamePrompt() {
+            const name = prompt("Por favor, insira seu nome:");
+            if (name) {
+                const colors = ["azul", "rosa", "vermelho", "roxo", "verde", "laranja"];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                alert(`Retire um bilhete ${randomColor}! Na sala da TI`);
+            }
+        }
+    </script>
 </head>
 <body>
-    <div class="fish-container">
-        <button class="fish-button" onclick="window.location.href='https://www.example1.com';">
-            <img src="peixe1.jpg" alt="Peixe 1">
-        </button>
+    <div class="row">
+        <div class="column fish-container">
+            <button class="fish-button" onclick="showNamePrompt()">
+                <img src="peixe1.png" alt="Peixe 1">
+            </button>
+        </div>
+        <div class="column fish-container">
+            <button class="fish-button" onclick="showNamePrompt()">
+                <img src="peixe2.png" alt="Peixe 2">
+            </button>
+        </div>
+        <div class="column fish-container">
+            <button class="fish-button" onclick="showNamePrompt()">
+                <img src="peixe3.png" alt="Peixe 3">
+            </button>
+        </div>
+        <div class="column fish-container">
+            <button class="fish-button" onclick="showNamePrompt()">
+                <img src="peixe4.png" alt="Peixe 4">
+            </button>
+        </div>
+        <div class="column fish-container">
+            <button class="fish-button" onclick="showNamePrompt()">
+                <img src="peixe5.png" alt="Peixe 5">
+            </button>
+        </div>
     </div>
-    <div class="fish-container">
-        <button class="fish-button" onclick="window.location.href='https://www.example2.com';">
-            <img src="peixe2.jpg" alt="Peixe 2">
-        </button>
-    </div>
-    <div class="fish-container">
-        <button class="fish-button" onclick="window.location.href='https://www.example3.com';">
-            <img src="peixe3.jpg" alt="Peixe 3">
-        </button>
-    </div>
-    <div class="fish-container">
-        <button class="fish-button" onclick="window.location.href='https://www.example4.com';">
-            <img src="peixe4.jpg" alt="Peixe 4">
-        </button>
-    </div>
-    <div class="fish-container">
-        <button class="fish-button" onclick="window.location.href='https://www.example5.com';">
-            <img src="peixe5.jpg" alt="Peixe 5">
-        </button>
-    </div>
-    <div class="fish-container">
-        <button class="fish-button" onclick="window.location.href='https://www.example6.com';">
-            <img src="peixe6.jpg" alt="Peixe 6">
-        </button>
-    </div>
-    <div class="fish-container">
-        <button class="fish-button" onclick="window.location.href='https://www.example7.com';">
-            <img src="peixe7.jpg" alt="Peixe 7">
-        </button>
-    </div>
-    <div class="fish-container">
-        <button class="fish-button" onclick="window.location.href='https://www.example8.com';">
-            <img src="peixe8.jpg" alt="Peixe 8">
-        </button>
-    </div>
-    <div class="fish-container">
-        <button class="fish-button" onclick="window.location.href='https://www.example9.com';">
-            <img src="peixe9.jpg" alt="Peixe 9">
-        </button>
-    </div>
-    <div class="fish-container">
-        <button class="fish-button" onclick="window.location.href='https://www.example10.com';">
-            <img src="peixe10.jpg" alt="Peixe 10">
-        </button>
+    <div class="row">
+        <div class="column fish-container">
+            <button class="fish-button" onclick="showNamePrompt()">
+                <img src="peixe6.png" alt="Peixe 6">
+            </button>
+        </div>
+        <div class="column fish-container">
+            <button class="fish-button" onclick="showNamePrompt()">
+                <img src="peixe7.png" alt="Peixe 7">
+            </button>
+        </div>
+        <div class="column fish-container">
+            <button class="fish-button" onclick="showNamePrompt()">
+                <img src="peixe8.png" alt="Peixe 8">
+            </button>
+        </div>
+        <div class="column fish-container">
+            <button class="fish-button" onclick="showNamePrompt()">
+                <img src="peixe9.png" alt="Peixe 9">
+            </button>
+        </div>
+        <div class="column fish-container">
+            <button class="fish-button" onclick="showNamePrompt()">
+                <img src="peixe10.png" alt="Peixe 10">
+            </button>
+        </div>
     </div>
 </body>
 </html>
